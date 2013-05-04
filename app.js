@@ -25,7 +25,7 @@ var express = require('express')
   , passport = require('passport')
   , connectEnsureLogin = require('connect-ensure-login')
   , TwitterStrategy = require('passport-twitter').Strategy
-  , keyModel = require('./models/keys');
+  , keyModel = require('./models/appkeys');
 
 var app = express();
 
