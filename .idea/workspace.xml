@@ -67,19 +67,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="87" selection-start="590" selection-end="590" vertical-scroll-proportion="0.22190201">
+            <state line="12" column="87" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="keys.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="keys.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/keys.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="35" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
+            <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,8 +96,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/models/keys.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/keys.js" />
       </list>
     </option>
   </component>
@@ -387,16 +387,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/keys.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
+        <state line="12" column="87" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/models/keys.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="87" selection-start="590" selection-end="590" vertical-scroll-proportion="0.22190201">
+        <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

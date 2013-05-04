@@ -1,3 +1,4 @@
+// not meant to be managed by git
 var TWITTER_CONSUMER_KEY = "lQoQcsb6ZHApoemefwkCOg";
 var TWITTER_CONSUMER_SECRET = "9EOQqEIVMaCtYN2ceWon8CLUUIveKBGa3EhHLEJBY";
 
