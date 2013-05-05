@@ -20,6 +20,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , photos = require('./routes/photos')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
@@ -50,6 +51,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/photos', connectEnsureLogin.ensureLoggedIn('/login'), function(req,res) {
+    photos.list(req,res);
+});
+
 //app.get('/', routes.index);
 app.get('/', connectEnsureLogin.ensureLoggedIn('/login'), function(req,res) {
     res.send('Hello ' + req.user.username);
@@ -60,7 +65,7 @@ app.get('/account', connectEnsureLogin.ensureLoggedIn('/login'), function(req,re
 });
 app.get('/login', function( req, res ) {
     res.send('<html><body><a href="/auth/twitter">Sign in with Twitter</a></body></html>');
-})
+});
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { successReturnToOrRedirect: '/', failureRedirect: '/login' }));
 
