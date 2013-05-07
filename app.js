@@ -29,6 +29,7 @@ var express = require('express')
   , LocalStrategy = require('passport-local').Strategy
   , keyModel = require('./models/appkeys');
 
+var os = require('os');
 var app = express();
 
 // all environments
@@ -84,11 +85,25 @@ passport.use(new LocalStrategy(
 ));
 */
 
+// host ip address
+var hostIpAddress = "";
+var ifaces=os.networkInterfaces();
+for (var dev in ifaces) {
+    var alias=0;
+    ifaces[dev].forEach(function(details){
+        if (details.family=='IPv4') {
+            hostIpAddress = details.address
+            console.log(dev+(alias?':'+alias:''),details.address);
+            ++alias;
+        }
+    });
+}
+
 
 passport.use(new TwitterStrategy({
             consumerKey: keyModel.getKey(),
             consumerSecret: keyModel.getSecret(),
-            callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+            callbackURL: "http://" + hostIpAddress + ":3000/auth/twitter/callback"
         },
         function(token, tokenSecret, profile, done) {
             // NOTE: You'll probably want to associate the Twitter profile with a
@@ -106,6 +121,9 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(obj, done) {
     done(null, obj);
 });
+
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('USE: 127.0.0.1:3000 Express server listening on port ' + app.get('port'));
 });
