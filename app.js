@@ -26,6 +26,7 @@ var express = require('express')
   , passport = require('passport')
   , connectEnsureLogin = require('connect-ensure-login')
   , TwitterStrategy = require('passport-twitter').Strategy
+  , LocalStrategy = require('passport-local').Strategy
   , keyModel = require('./models/appkeys');
 
 var app = express();
@@ -69,6 +70,20 @@ app.get('/login', function( req, res ) {
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { successReturnToOrRedirect: '/', failureRedirect: '/login' }));
 
+/*
+passport.use(new LocalStrategy(
+        function(username, password, done) {
+            if (err) { return done(err); }
+
+            if( username == "foo" || password == "bar") {
+              return done(null, {username: "foo", firstname: "bob", lastname: "builder"});
+            } else {
+              return done(null, false, { message: 'Incorrect login' });
+            }
+        }
+));
+*/
+
 
 passport.use(new TwitterStrategy({
             consumerKey: keyModel.getKey(),
@@ -82,6 +97,7 @@ passport.use(new TwitterStrategy({
             return done(null, user);
         }
 ));
+
 
 passport.serializeUser(function(user, done) {
     done(null, user);
